@@ -1,14 +1,17 @@
 import path from 'path';
 import fileReader from './file-reader';
+
 import {
-  part1 as day1part1,
   fileReadHandler as day1FileReadHandler,
+  part1 as day1part1,
+  part2 as day1part2,
 } from './day1';
 
 const challenges = {
   '1': {
     fileReadHandler: day1FileReadHandler,
     '1': day1part1,
+    '2': day1part2,
   },
 };
 
@@ -42,15 +45,12 @@ if (!parts.includes(partArg)) {
   process.exit(1); // https://nodejs.dev/learn/how-to-exit-from-a-nodejs-program
 }
 
-if (dayArg === '1') {
-  const input = fileReader<number>(
-    path.join(__dirname, `day${dayArg}/input.txt`),
-    challenges[dayArg].fileReadHandler
-  );
-  if (partArg === '1') {
-    console.log(
-      `day ${dayArg}, part ${partArg} =`,
-      challenges[dayArg][partArg](input)
-    );
-  }
-}
+const input = fileReader<number>(
+  path.join(__dirname, `day${dayArg}/input.txt`),
+  challenges[dayArg].fileReadHandler
+);
+
+console.log(
+  `day ${dayArg}, part ${partArg} =`,
+  challenges[dayArg][partArg](input)
+);
