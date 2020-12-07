@@ -1,6 +1,9 @@
-const part1 = (input: Array<string>): number => 0;
+import { PolicyAndPassword } from './policy-and-password';
+import { Policy } from './policy';
 
-const somethingElse = (arg: number): number => 0;
+const part1 = (input: Array<PolicyAndPassword>): number => 0;
+
+const isPasswordValid = (policy: Policy, password: string): boolean => false;
 
 export default part1;
-export { somethingElse };
+export { isPasswordValid };
