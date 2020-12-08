@@ -1,6 +1,8 @@
-const part2 = (input: Array<string>): number => 0;
+import { Instruction } from './instruction';
 
-const somethingElse = (arg: number): number => 0;
+const part2 = (instructions: Array<Instruction>): number => 0;
+
+const attemptExcution = (instructions: Array<Instruction>): number => 0;
 
 export default part2;
-export { somethingElse };
+export { attemptExcution };
