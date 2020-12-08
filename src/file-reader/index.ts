@@ -7,7 +7,7 @@ const fileReader = <Type>(fileName: string, handler: Function): Array<Type> => {
 
   let line;
   while ((line = liner.next())) {
-    handler(result, line);
+    handler(result, line.toString('ascii'));
   }
 
   return result;

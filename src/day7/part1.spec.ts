@@ -112,10 +112,12 @@ describe('day7/treeOfBagsContaining', () => {
           bag: 'bright white',
           parents: [
             {
-              bag: 'dark orange',
+              bag: 'light red',
+              parents: [],
             },
             {
-              bag: 'light red',
+              bag: 'dark orange',
+              parents: [],
             },
           ],
         },
@@ -123,10 +125,12 @@ describe('day7/treeOfBagsContaining', () => {
           bag: 'muted yellow',
           parents: [
             {
-              bag: 'dark orange',
+              bag: 'light red',
+              parents: [],
             },
             {
-              bag: 'light red',
+              bag: 'dark orange',
+              parents: [],
             },
           ],
         },
