@@ -1,4 +1,4 @@
-import part2, { somethingElse } from './part2';
+import part2, { treeOfBagsContainedBy } from './part2';
 
 const regulations1 = [
   {
@@ -165,5 +165,90 @@ describe('day7/part2', () => {
   });
   it('should work out the for regulations2', () => {
     expect(part2(regulations2)).toEqual(126);
+  });
+});
+describe('day7/treeOfBagsContainedBy', () => {
+  it('should work out the bag tree for regulations1', () => {
+    expect(treeOfBagsContainedBy(regulations1, 'shiny gold')).toEqual({
+      quantity: 1,
+      bag: 'shiny gold',
+      children: [
+        {
+          quantity: 1,
+          bag: 'dark olive',
+          children: [
+            {
+              quantity: 3,
+              bag: 'faded blue',
+              children: [],
+            },
+            {
+              quantity: 4,
+              bag: 'dotted black',
+              children: [],
+            },
+          ],
+        },
+        {
+          quantity: 2,
+          bag: 'vibrant plum',
+          children: [
+            {
+              quantity: 5,
+              bag: 'faded blue',
+              children: [],
+            },
+            {
+              quantity: 6,
+              bag: 'dotted black',
+              children: [],
+            },
+          ],
+        },
+      ],
+    });
+  });
+  it('should work out the bag tree for regulations2', () => {
+    expect(treeOfBagsContainedBy(regulations2, 'shiny gold')).toEqual({
+      quantity: 1,
+      bag: 'shiny gold',
+      children: [
+        {
+          quantity: 2,
+          bag: 'dark red',
+          children: [
+            {
+              quantity: 2,
+              bag: 'dark orange',
+              children: [
+                {
+                  quantity: 2,
+                  bag: 'dark yellow',
+                  children: [
+                    {
+                      quantity: 2,
+                      bag: 'dark green',
+                      children: [
+                        {
+                          quantity: 2,
+                          bag: 'dark blue',
+                          children: [
+                            {
+                              quantity: 2,
+                              bag: 'dark violet',
+                              children: [],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    });
   });
 });
