@@ -1,13 +1,14 @@
 import { BagRegulation } from './bag-regulation';
 import { BagTreeNode } from './bag-tree-node';
+import { ContainedBag } from './contained-bag';
 
 const part1 = (regulations: Array<BagRegulation>): number => {
   return (
     traverseTreeNodeToGetAllBags(
       treeOfBagsContaining(regulations, 'shiny gold')
     ).reduce((acc, cur) => {
-      if (!acc.includes(cur)) {
-        acc.push(cur);
+      if (!acc.includes(cur.bag)) {
+        acc.push(cur.bag);
       }
       return acc;
     }, []).length - 1
@@ -16,8 +17,8 @@ const part1 = (regulations: Array<BagRegulation>): number => {
 
 const traverseTreeNodeToGetAllBags = (
   bagTreeNode: BagTreeNode
-): Array<string> => {
-  const result = [bagTreeNode.bag];
+): Array<ContainedBag> => {
+  const result = [{ bag: bagTreeNode.bag, quantity: bagTreeNode.quantity }];
   const parents = bagTreeNode.parents.flatMap((parent) =>
     traverseTreeNodeToGetAllBags(parent)
   );
@@ -27,7 +28,8 @@ const traverseTreeNodeToGetAllBags = (
 
 const treeOfBagsContaining = (
   regulations: Array<BagRegulation>,
-  bag: string
+  bag: string,
+  child: ContainedBag = null
 ): BagTreeNode => {
   const parents: Array<BagTreeNode> = [];
 
@@ -37,12 +39,12 @@ const treeOfBagsContaining = (
       ...regulations[i].contains
         .filter((contained) => contained.bag === bag)
         .map<BagTreeNode>((contained) =>
-          treeOfBagsContaining(regulations, regulations[i].bag)
+          treeOfBagsContaining(regulations, regulations[i].bag, contained)
         )
     );
   }
 
-  return { bag, parents };
+  return { bag, parents, quantity: child?.quantity || 1 };
 };
 
 export default part1;

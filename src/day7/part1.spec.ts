@@ -106,29 +106,36 @@ describe('day7/part1', () => {
 describe('day7/treeOfBagsContaining', () => {
   it('should work out something', () => {
     expect(treeOfBagsContaining(regulations, 'shiny gold')).toEqual({
+      quantity: 1,
       bag: 'shiny gold',
       parents: [
         {
+          quantity: 1,
           bag: 'bright white',
           parents: [
             {
+              quantity: 1,
               bag: 'light red',
               parents: [],
             },
             {
+              quantity: 3,
               bag: 'dark orange',
               parents: [],
             },
           ],
         },
         {
+          quantity: 2,
           bag: 'muted yellow',
           parents: [
             {
+              quantity: 2,
               bag: 'light red',
               parents: [],
             },
             {
+              quantity: 4,
               bag: 'dark orange',
               parents: [],
             },
