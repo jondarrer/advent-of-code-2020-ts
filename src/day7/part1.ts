@@ -1,6 +1,12 @@
-const part1 = (input: Array<string>): number => 0;
+import { BagRegulation } from './bag-regulation';
+import { BagTreeNode } from './bag-tree-node';
 
-const somethingElse = (arg: number): number => 0;
+const part1 = (regulations: Array<BagRegulation>): number => 0;
+
+const treeOfBagsContaining = (
+  regulations: Array<BagRegulation>,
+  bag: string
+): BagTreeNode => ({ bag: '', parents: [] });
 
 export default part1;
-export { somethingElse };
+export { treeOfBagsContaining };
