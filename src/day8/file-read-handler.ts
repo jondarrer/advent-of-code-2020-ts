@@ -4,7 +4,8 @@ const fileReadHandler = (
   accumulator: Array<Instruction>,
   line: string
 ): void => {
-  accumulator.push({ op: '', arg: 0 });
+  const instruction = line.split(' ');
+  accumulator.push({ op: instruction[0], arg: parseInt(instruction[1]) });
 };
 
 export default fileReadHandler;
