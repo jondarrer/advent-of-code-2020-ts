@@ -1,5 +1,5 @@
-const fileReadHandler = (accumulator: Array<string>, line: string): void => {
-  accumulator.push(line);
+const fileReadHandler = (accumulator: Array<number>, line: string): void => {
+  accumulator.push(parseInt(line));
 };
 
 export default fileReadHandler;

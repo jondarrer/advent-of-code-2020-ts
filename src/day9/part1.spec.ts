@@ -32,6 +32,10 @@ describe('day9/whichNumbersSumToTarget', () => {
     const nums = [35, 20, 15, 25, 47];
     expect(whichNumbersSumToTarget(nums, 40)).toEqual([15, 25]);
   });
+  it('should work out that 62 is the sum of 15 and 47 from the provided nums', () => {
+    const nums = [20, 15, 25, 47, 40];
+    expect(whichNumbersSumToTarget(nums, 62)).toEqual([15, 47]);
+  });
   it('should work out that 127 is not the sum of any of the provided nums', () => {
     const nums = [95, 102, 117, 150, 182];
     expect(whichNumbersSumToTarget(nums, 127)).toBeNull();
