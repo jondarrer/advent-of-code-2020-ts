@@ -1,4 +1,4 @@
-import part1, { whichNumbersSumToTarget } from './part1';
+import part1, { whichTwoNumbersSumToTarget } from './part1';
 
 describe('day9/part1', () => {
   it('should work out the invalid number with range of 5', () => {
@@ -27,17 +27,17 @@ describe('day9/part1', () => {
     expect(part1(input, 5)).toEqual(127);
   });
 });
-describe('day9/whichNumbersSumToTarget', () => {
+describe('day9/whichTwoNumbersSumToTarget', () => {
   it('should work out that 40 is the sum of 15 and 25 from the provided nums', () => {
     const nums = [35, 20, 15, 25, 47];
-    expect(whichNumbersSumToTarget(nums, 40)).toEqual([15, 25]);
+    expect(whichTwoNumbersSumToTarget(nums, 40)).toEqual([15, 25]);
   });
   it('should work out that 62 is the sum of 15 and 47 from the provided nums', () => {
     const nums = [20, 15, 25, 47, 40];
-    expect(whichNumbersSumToTarget(nums, 62)).toEqual([15, 47]);
+    expect(whichTwoNumbersSumToTarget(nums, 62)).toEqual([15, 47]);
   });
   it('should work out that 127 is not the sum of any of the provided nums', () => {
     const nums = [95, 102, 117, 150, 182];
-    expect(whichNumbersSumToTarget(nums, 127)).toBeNull();
+    expect(whichTwoNumbersSumToTarget(nums, 127)).toBeNull();
   });
 });

@@ -1,7 +1,7 @@
 const part1 = (input: Array<number>, range = 25): number => {
   let i = 0;
   while (
-    whichNumbersSumToTarget(input.slice(i, range + i), input[range + i]) !==
+    whichTwoNumbersSumToTarget(input.slice(i, range + i), input[range + i]) !==
     null
   ) {
     i += 1;
@@ -9,7 +9,7 @@ const part1 = (input: Array<number>, range = 25): number => {
   return input[range + i];
 };
 
-const whichNumbersSumToTarget = (
+const whichTwoNumbersSumToTarget = (
   nums: Array<number>,
   target: number
 ): Array<number> => {
@@ -25,4 +25,4 @@ const whichNumbersSumToTarget = (
 };
 
 export default part1;
-export { whichNumbersSumToTarget };
+export { whichTwoNumbersSumToTarget };
