@@ -25,8 +25,7 @@ const input = [
 
 describe('day9/part2', () => {
   it('should work out the result', () => {
-    const input = [];
-    expect(part2(input)).toEqual(62);
+    expect(part2(input, 127)).toEqual(62);
   });
 });
 describe('day9/whichNumbersSumToTarget', () => {
