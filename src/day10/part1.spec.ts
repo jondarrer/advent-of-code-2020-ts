@@ -39,29 +39,29 @@ const chainedAdapters = [
   2,
   3,
   4,
-  7,
+  7, //
   8,
   9,
   10,
   11,
-  14,
-  17,
+  14, //
+  17, //
   18,
   19,
   20,
-  23,
+  23, //
   24,
   25,
-  28,
-  31,
+  28, //
+  31, //
   32,
   33,
   34,
   35,
-  38,
+  38, //
   39,
-  42,
-  45,
+  42, //
+  45, //
   46,
   47,
   48,
@@ -81,8 +81,8 @@ describe('day10/chainAdapters', () => {
 describe('day10/calculateDifferences', () => {
   it('should work out something', () => {
     expect(calculateDifferences(chainedAdapters)).toEqual({
-      one: 22,
-      three: 10,
+      1: 22,
+      3: 9,
     });
   });
 });
