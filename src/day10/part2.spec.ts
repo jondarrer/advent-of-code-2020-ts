@@ -35,7 +35,7 @@ const input = [
 ];
 
 const chainedAdapters = [
-  1,
+  1, // 0,1,2,3,4-0,2,3,4-0,3,4-0,1,3,4-0,1,4-0,2,4 = 6
   2,
   3,
   4,
@@ -45,7 +45,7 @@ const chainedAdapters = [
   10,
   11,
   14, // 4
-  17, //
+  17, // 17,18,19,20-17,19,20-17,20-17,18,20 = 4
   18,
   19,
   20,
@@ -65,8 +65,8 @@ const chainedAdapters = [
   46,
   47,
   48,
-  49, // 4
-];
+  49,
+]; // 4
 
 describe('day10/part2', () => {
   it('should work out the result', () => {
