@@ -1,6 +1,10 @@
-const part2 = (input: Array<string>): number => 0;
+import { DifferenceTotals } from './difference-totals';
 
-const somethingElse = (arg: number): number => 0;
+const part2 = (input: Array<number>): number => 0;
+
+const continuousChainsOfOnes = (
+  chainedAdapters: Array<number>
+): DifferenceTotals => null;
 
 export default part2;
-export { somethingElse };
+export { continuousChainsOfOnes };
