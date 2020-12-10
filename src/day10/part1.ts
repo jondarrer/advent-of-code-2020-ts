@@ -1,6 +1,10 @@
-const part1 = (input: Array<string>): number => 0;
+import { DifferenceTotals } from './difference-totals';
 
-const somethingElse = (arg: number): number => 0;
+const part1 = (input: Array<number>): number => 0;
+
+const chainAdapters = (input: Array<number>): Array<number> => [];
+
+const calculateDifferences = (input: Array<number>): DifferenceTotals => null;
 
 export default part1;
-export { somethingElse };
+export { chainAdapters, calculateDifferences };

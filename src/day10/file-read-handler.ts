@@ -1,5 +1,1 @@
-const fileReadHandler = (accumulator: Array<string>, line: string): void => {
-  accumulator.push(line);
-};
-
-export default fileReadHandler;
+export { default } from '../day9/file-read-handler';
