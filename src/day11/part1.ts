@@ -84,4 +84,9 @@ const seatAtPosition = (state: Array<string>, x: number, y: number): string => {
 };
 
 export default part1;
-export { applyRulesToState, numberOfOccupiedAdjacentSeats, seatAtPosition };
+export {
+  applyRulesToState,
+  areStatesEqual,
+  numberOfOccupiedAdjacentSeats,
+  seatAtPosition,
+};
