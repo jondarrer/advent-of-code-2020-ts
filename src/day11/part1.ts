@@ -1,6 +1,6 @@
-const part1 = (input: Array<string>): number => 0;
+const part1 = (state: Array<string>): number => 0;
 
-const somethingElse = (arg: number): number => 0;
+const applyRulesToState = (state: Array<string>): Array<string> => null;
 
 export default part1;
-export { somethingElse };
+export { applyRulesToState };
