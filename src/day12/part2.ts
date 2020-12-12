@@ -1,6 +1,21 @@
-const part2 = (input: Array<string>): number => 0;
+import { NavigationInstruction } from './navigation-instruction';
+import { Position } from './position';
 
-const somethingElse = (arg: number): number => 0;
+const part2 = (input: Array<NavigationInstruction>): number => 0;
+
+const moveInDirectionOfWaypoint = (
+  ship: Position,
+  waypoint: Position,
+  instruction: NavigationInstruction
+): Position => null;
+const rotateWaypoint = (
+  waypoint: Position,
+  instruction: NavigationInstruction
+): Position => null;
+const moveWaypoint = (
+  waypoint: Position,
+  instruction: NavigationInstruction
+): Position => null;
 
 export default part2;
-export { somethingElse };
+export { moveInDirectionOfWaypoint, rotateWaypoint, moveWaypoint };
