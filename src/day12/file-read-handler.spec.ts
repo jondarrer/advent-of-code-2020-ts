@@ -14,7 +14,7 @@ describe('day12/file-read-handler', () => {
       { action: RelativeDirection.Forward, value: 10 },
       { action: CompassDirection.North, value: 3 },
       { action: RelativeDirection.Forward, value: 7 },
-      { action: Rotation.Right, value: 90 },
+      { action: Rotation.Clockwise, value: 90 },
       { action: RelativeDirection.Forward, value: 11 },
     ]);
   });

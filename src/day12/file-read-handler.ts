@@ -25,9 +25,9 @@ const convertToAction = (action: string): Action => {
     case 'W':
       return CompassDirection.West;
     case 'R':
-      return Rotation.Right;
+      return Rotation.Clockwise;
     case 'L':
-      return Rotation.Left;
+      return Rotation.AntiClockwise;
     case 'F':
       return RelativeDirection.Forward;
     default:

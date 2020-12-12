@@ -22,8 +22,8 @@ const part1 = (instructions: Array<NavigationInstruction>): number => {
         instruction
       );
     } else if (
-      instruction.action === Rotation.Right ||
-      instruction.action === Rotation.Left
+      instruction.action === Rotation.Clockwise ||
+      instruction.action === Rotation.AntiClockwise
     ) {
       currentDirection = changeDirection(
         currentDirection,
@@ -92,85 +92,85 @@ const changeDirection = (
 ): CompassDirection => {
   if (
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 180)
   ) {
     return CompassDirection.East;
   } else if (
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 90)
   ) {
     return CompassDirection.South;
   } else if (
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.North &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 270)
   ) {
     return CompassDirection.West;
   } else if (
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 270) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Right &&
+      rotation === Rotation.Clockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.East &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 90) ||
     (currentDirection === CompassDirection.South &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 180) ||
     (currentDirection === CompassDirection.West &&
-      rotation === Rotation.Left &&
+      rotation === Rotation.AntiClockwise &&
       value === 270)
   ) {
     return CompassDirection.North;

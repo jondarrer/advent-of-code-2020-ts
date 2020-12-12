@@ -1,4 +1,4 @@
 export enum Rotation {
-  Right = 'R',
-  Left = 'L',
+  Clockwise = 'R',
+  AntiClockwise = 'L',
 }
