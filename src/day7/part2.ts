@@ -2,7 +2,9 @@ import { BagRegulation } from './bag-regulation';
 import { BagTreeNode } from './bag-tree-node';
 import { ContainedBag } from './contained-bag';
 
-const part2 = (regulations: Array<BagRegulation>): number => 0;
+const part2 = (regulations: Array<BagRegulation>): number => {
+  return countChildBags(treeOfBagsContainedBy(regulations, 'shiny gold'));
+};
 
 const treeOfBagsContainedBy = (
   regulations: Array<BagRegulation>,
@@ -26,5 +28,12 @@ const treeOfBagsContainedBy = (
   return { bag, children, quantity: parent?.quantity || 1 };
 };
 
+const countChildBags = (treeNode: BagTreeNode): number => {
+  return treeNode.children.reduce(
+    (acc, cur) => acc + (1 + countChildBags(cur)) * cur.quantity,
+    0
+  );
+};
+
 export default part2;
-export { treeOfBagsContainedBy };
+export { treeOfBagsContainedBy, countChildBags };

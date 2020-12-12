@@ -1,4 +1,4 @@
-import part2, { treeOfBagsContainedBy } from './part2';
+import part2, { treeOfBagsContainedBy, countChildBags } from './part2';
 
 const regulations1 = [
   {
@@ -159,86 +159,73 @@ const regulations2 = [
   },
 ];
 
-describe('day7/part2', () => {
-  it('should work out the for regulations1', () => {
-    expect(part2(regulations1)).toEqual(32);
-  });
-  it('should work out the for regulations2', () => {
-    expect(part2(regulations2)).toEqual(126);
-  });
-});
-describe('day7/treeOfBagsContainedBy', () => {
-  it('should work out the bag tree for regulations1', () => {
-    expect(treeOfBagsContainedBy(regulations1, 'shiny gold')).toEqual({
+const treeNode1 = {
+  quantity: 1,
+  bag: 'shiny gold',
+  children: [
+    {
       quantity: 1,
-      bag: 'shiny gold',
+      bag: 'dark olive',
       children: [
         {
-          quantity: 1,
-          bag: 'dark olive',
-          children: [
-            {
-              quantity: 3,
-              bag: 'faded blue',
-              children: [],
-            },
-            {
-              quantity: 4,
-              bag: 'dotted black',
-              children: [],
-            },
-          ],
+          quantity: 3,
+          bag: 'faded blue',
+          children: [],
         },
         {
-          quantity: 2,
-          bag: 'vibrant plum',
-          children: [
-            {
-              quantity: 5,
-              bag: 'faded blue',
-              children: [],
-            },
-            {
-              quantity: 6,
-              bag: 'dotted black',
-              children: [],
-            },
-          ],
+          quantity: 4,
+          bag: 'dotted black',
+          children: [],
         },
       ],
-    });
-  });
-  it('should work out the bag tree for regulations2', () => {
-    expect(treeOfBagsContainedBy(regulations2, 'shiny gold')).toEqual({
-      quantity: 1,
-      bag: 'shiny gold',
+    },
+    {
+      quantity: 2,
+      bag: 'vibrant plum',
+      children: [
+        {
+          quantity: 5,
+          bag: 'faded blue',
+          children: [],
+        },
+        {
+          quantity: 6,
+          bag: 'dotted black',
+          children: [],
+        },
+      ],
+    },
+  ],
+};
+
+const treeNode2 = {
+  quantity: 1,
+  bag: 'shiny gold',
+  children: [
+    {
+      quantity: 2,
+      bag: 'dark red',
       children: [
         {
           quantity: 2,
-          bag: 'dark red',
+          bag: 'dark orange',
           children: [
             {
               quantity: 2,
-              bag: 'dark orange',
+              bag: 'dark yellow',
               children: [
                 {
                   quantity: 2,
-                  bag: 'dark yellow',
+                  bag: 'dark green',
                   children: [
                     {
                       quantity: 2,
-                      bag: 'dark green',
+                      bag: 'dark blue',
                       children: [
                         {
                           quantity: 2,
-                          bag: 'dark blue',
-                          children: [
-                            {
-                              quantity: 2,
-                              bag: 'dark violet',
-                              children: [],
-                            },
-                          ],
+                          bag: 'dark violet',
+                          children: [],
                         },
                       ],
                     },
@@ -249,6 +236,35 @@ describe('day7/treeOfBagsContainedBy', () => {
           ],
         },
       ],
-    });
+    },
+  ],
+};
+
+describe('day7/part2', () => {
+  it('should work out the for regulations1', () => {
+    expect(part2(regulations1)).toEqual(32);
+  });
+  it('should work out the for regulations2', () => {
+    expect(part2(regulations2)).toEqual(126);
+  });
+});
+describe('day7/treeOfBagsContainedBy', () => {
+  it('should work out the bag tree for regulations1', () => {
+    expect(treeOfBagsContainedBy(regulations1, 'shiny gold')).toEqual(
+      treeNode1
+    );
+  });
+  it('should work out the bag tree for regulations2', () => {
+    expect(treeOfBagsContainedBy(regulations2, 'shiny gold')).toEqual(
+      treeNode2
+    );
+  });
+});
+describe('day7/countChildBags', () => {
+  it('should work out the bag count for treeNode1', () => {
+    expect(countChildBags(treeNode1)).toEqual(32);
+  });
+  it('should work out the bag count for treeNode1', () => {
+    expect(countChildBags(treeNode2)).toEqual(126);
   });
 });
