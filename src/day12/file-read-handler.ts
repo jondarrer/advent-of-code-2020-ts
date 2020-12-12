@@ -2,6 +2,7 @@ import { RelativeDirection } from './relative-direction';
 import { CompassDirection } from './compass-direction';
 import { Rotation } from './rotation';
 import { NavigationInstruction } from './navigation-instruction';
+import { Action } from './action';
 
 const fileReadHandler = (
   accumulator: Array<NavigationInstruction>,
