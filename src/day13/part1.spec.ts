@@ -19,7 +19,7 @@ describe('day13/arrivesAtOrAfter', () => {
   it('should work out period 31 on or after 939 is 961', () => {
     expect(arrivesAtOrAfter(31, 939)).toEqual(961);
   });
-  it('should work out period 31 on or after 939 is 950', () => {
-    expect(arrivesAtOrAfter(31, 939)).toEqual(950);
+  it('should work out period 19 on or after 939 is 950', () => {
+    expect(arrivesAtOrAfter(19, 939)).toEqual(950);
   });
 });
