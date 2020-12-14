@@ -1,14 +1,64 @@
-import part2, { somethingElse } from './part2';
+import part2, {
+  applyMaskToAddress,
+  getAllPossibleAddressPermutations,
+} from './part2';
 
 describe('day14/part2', () => {
   it('should work out the result', () => {
-    const input = [];
-    expect(part2(input)).toEqual(0);
+    const instructions = [
+      {
+        mask: '000000000000000000000000000000X1001X',
+        writes: [{ address: 42, value: 100 }],
+      },
+      {
+        mask: '00000000000000000000000000000000X0XX',
+        writes: [{ address: 26, value: 1 }],
+      },
+    ];
+    expect(part2(instructions)).toEqual(208);
   });
 });
-describe('day14/somethingElse', () => {
-  it('should work out something', () => {
-    const input = 0;
-    expect(somethingElse(input)).toEqual(0);
+describe('day14/applyMaskToAddress', () => {
+  it('should apply mask 000000000000000000000000000000X1001X to 000000000000000000000000000000101010 and get 000000000000000000000000000000X1101X', () => {
+    expect(
+      applyMaskToAddress(
+        '000000000000000000000000000000X1001X',
+        '000000000000000000000000000000101010'
+      )
+    ).toEqual('000000000000000000000000000000X1101X');
+  });
+  it('should apply mask 00000000000000000000000000000000X0XX to 000000000000000000000000000000011010 and get 00000000000000000000000000000001X0XX', () => {
+    expect(
+      applyMaskToAddress(
+        '00000000000000000000000000000000X0XX',
+        '000000000000000000000000000000011010'
+      )
+    ).toEqual('00000000000000000000000000000001X0XX');
+  });
+});
+describe('day14/getAllPossibleAddressPermutations', () => {
+  it('should get all 4 possible permutations for 000000000000000000000000000000X1101X', () => {
+    expect(
+      getAllPossibleAddressPermutations('000000000000000000000000000000X1101X')
+    ).toEqual([
+      '000000000000000000000000000000011010',
+      '000000000000000000000000000000011011',
+      '000000000000000000000000000000111010',
+      '000000000000000000000000000000111011',
+    ]);
+  });
+  it('should get all 8 possible permutations for 00000000000000000000000000000001X0XX', () => {
+    expect(
+      getAllPossibleAddressPermutations('00000000000000000000000000000001X0XX')
+    ).toEqual([
+      '000000000000000000000000000000010000',
+      '000000000000000000000000000000010001',
+      '000000000000000000000000000000010010',
+      '000000000000000000000000000000010011',
+      '000000000000000000000000000000011000',
+      '000000000000000000000000000000011001',
+      '000000000000000000000000000000011010',
+      '000000000000000000000000000000011011',
+    ]);
   });
 });
