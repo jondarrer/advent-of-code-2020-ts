@@ -4,7 +4,7 @@ import part2, {
 } from './part2';
 
 describe('day14/part2', () => {
-  it('should work out the result', () => {
+  it('should work out the result for floating memory', () => {
     const instructions = [
       {
         mask: '000000000000000000000000000000X1001X',
@@ -37,6 +37,11 @@ describe('day14/applyMaskToAddress', () => {
   });
 });
 describe('day14/getAllPossibleAddressPermutations', () => {
+  it('should get all 1 possible permutations for 000000000000000000000000000000011010', () => {
+    expect(
+      getAllPossibleAddressPermutations('000000000000000000000000000000011010')
+    ).toEqual(['000000000000000000000000000000011010']);
+  });
   it('should get all 4 possible permutations for 000000000000000000000000000000X1101X', () => {
     expect(
       getAllPossibleAddressPermutations('000000000000000000000000000000X1101X')

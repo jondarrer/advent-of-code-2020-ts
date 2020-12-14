@@ -1,7 +1,7 @@
 import { MaskedWritesInstruction } from './masked-writes-instruction';
 import { WriteInstruction } from './write-instruction';
 
-const writeRegex = new RegExp(/mem\[(?<address>\d+)] = (?<value>\d+)/); //
+const writeRegex = new RegExp(/mem\[(?<address>\d+)] = (?<value>\d+)/); // https://regex101.com/r/qH79cM/1
 
 const fileReadHandler = (
   accumulator: Array<MaskedWritesInstruction>,
