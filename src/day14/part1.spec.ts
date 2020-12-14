@@ -1,4 +1,4 @@
-import part1, { applyMaskToValue, padValue } from './part1';
+import part1, { applyMaskToValue, padValue, countMemory } from './part1';
 
 describe('day14/part1', () => {
   it('should work out the result', () => {
@@ -6,8 +6,8 @@ describe('day14/part1', () => {
       {
         mask: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X',
         writes: [
-          { address: 8, value: '11' },
-          { address: 7, value: '101' },
+          { address: 8, value: 11 },
+          { address: 7, value: 101 },
           { address: 8, value: 0 },
         ],
       },
@@ -51,5 +51,15 @@ describe('day14/padValue', () => {
     expect(padValue('0', 36, '0')).toEqual(
       '000000000000000000000000000000000000'
     );
+  });
+});
+describe('day14/countMemory', () => {
+  it('should count memory values 000000000000000000000000000001100101 and 000000000000000000000000000001000000 to be 165', () => {
+    expect(
+      countMemory([
+        '000000000000000000000000000001100101',
+        '000000000000000000000000000001000000',
+      ])
+    ).toEqual(165);
   });
 });

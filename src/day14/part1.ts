@@ -10,12 +10,12 @@ const part1 = (instructions: Array<MaskedWritesInstruction>): number => {
       const write = instruction.writes[j];
       memory[write.address] = applyMaskToValue(
         instruction.mask,
-        padValue(write.value, instruction.mask.length, '0')
+        padValue(write.value.toString(2), instruction.mask.length, '0')
       );
     }
   }
 
-  return 0;
+  return countMemory(memory);
 };
 
 const applyMaskToValue = (mask: string, value: string): string => {
@@ -36,5 +36,18 @@ const applyMaskToValue = (mask: string, value: string): string => {
 const padValue = (value: string, length: number, char: string): string =>
   value.padStart(length, char);
 
+const countMemory = (memory: Array<string>): number => {
+  let result = 0;
+
+  for (let i = 0; i < memory.length; i++) {
+    const binary = memory[i];
+    if (binary) {
+      result += parseInt(binary, 2);
+    }
+  }
+
+  return result;
+};
+
 export default part1;
-export { applyMaskToValue, padValue };
+export { applyMaskToValue, padValue, countMemory };

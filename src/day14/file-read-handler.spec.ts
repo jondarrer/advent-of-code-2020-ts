@@ -20,16 +20,16 @@ describe('day14/file-read-handler', () => {
       {
         mask: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X',
         writes: [
-          { address: 8, value: '11' },
-          { address: 7, value: '101' },
+          { address: 8, value: 11 },
+          { address: 7, value: 101 },
           { address: 8, value: 0 },
         ],
       },
       {
         mask: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X',
         writes: [
-          { address: 8, value: '11' },
-          { address: 7, value: '101' },
+          { address: 8, value: 11 },
+          { address: 7, value: 101 },
           { address: 8, value: 0 },
         ],
       },
