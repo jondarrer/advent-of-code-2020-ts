@@ -1,6 +1,10 @@
-const part1 = (input: Array<string>): number => 0;
+import { MaskedWritesInstruction } from './masked-writes-instruction';
 
-const somethingElse = (arg: number): number => 0;
+const part1 = (instructions: Array<MaskedWritesInstruction>): number => 0;
+
+const applyMaskToValue = (mask: string, value: string): string => null;
+
+const padValue = (value: string, length: number, char: string): string => null;
 
 export default part1;
-export { somethingElse };
+export { applyMaskToValue, padValue };
