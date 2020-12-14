@@ -1,6 +1,22 @@
 import { MaskedWritesInstruction } from './masked-writes-instruction';
 
-const part1 = (instructions: Array<MaskedWritesInstruction>): number => 0;
+const part1 = (instructions: Array<MaskedWritesInstruction>): number => {
+  const memory = [];
+
+  for (let i = 0; i < instructions.length; i++) {
+    const instruction = instructions[i];
+
+    for (let j = 0; j < instruction.writes.length; j++) {
+      const write = instruction.writes[j];
+      memory[write.address] = applyMaskToValue(
+        instruction.mask,
+        padValue(write.value, instruction.mask.length, '0')
+      );
+    }
+  }
+
+  return 0;
+};
 
 const applyMaskToValue = (mask: string, value: string): string => {
   let result = [];
