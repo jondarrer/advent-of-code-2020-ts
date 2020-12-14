@@ -3,6 +3,11 @@ import fileReader from './file-reader';
 
 // day imports
 import {
+  fileReadHandler as day14FileReadHandler,
+  part1 as day14part1,
+  part2 as day14part2,
+} from './day14';
+import {
   fileReadHandler as day13FileReadHandler,
   part1 as day13part1,
   part2 as day13part2,
@@ -50,6 +55,11 @@ import {
 
 const challenges = {
   // challenges by day
+  '14': {
+    fileReadHandler: day14FileReadHandler,
+    '1': day14part1,
+    '2': day14part2,
+  },
   '13': {
     fileReadHandler: day13FileReadHandler,
     '1': day13part1,
