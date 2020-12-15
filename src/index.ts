@@ -152,7 +152,9 @@ const input = fileReader<number>(
   challenges[dayArg].fileReadHandler
 );
 
+console.time('Time');
 console.log(
   `day ${dayArg}, part ${partArg} =`,
   challenges[dayArg][partArg](input)
 );
+console.timeEnd('Time');
