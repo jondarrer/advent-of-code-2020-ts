@@ -1,6 +1,12 @@
-const part1 = (input: Array<string>): number => 0;
+import { Notes } from './notes';
+import { Rule } from './rule';
 
-const somethingElse = (arg: number): number => 0;
+const part1 = (input: Array<Notes>): number => 0;
+
+const invalidTicketFieldsForRules = (
+  ticket: Array<number>,
+  rules: Array<Rule>
+): Array<number> => null;
 
 export default part1;
-export { somethingElse };
+export { invalidTicketFieldsForRules };
